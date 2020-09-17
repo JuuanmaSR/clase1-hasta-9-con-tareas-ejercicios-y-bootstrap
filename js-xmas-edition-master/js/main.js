@@ -57,12 +57,15 @@ function validarDescripcionRegalo(descripcionRegalo) {
 
 function validarFormulario(event) {
     const $form = document.querySelector(`#carta-a-santa`);
-    const errorNombre = validarNombre($form.nombre.value);
+   
     const ciudad = $form.ciudad.value;
     const comportamiento = $form.comportamiento.value;
     const descripcionRegalo = $form[`descripcion-regalo`].value;
 
-    manejarErrores([errorNombre]);
+
+    const errorNombre = validarNombre($form.nombre.value);
+    const errorCiudad = validarCiudad(ciudad);
+    manejarErrores([errorNombre, errorCiudad]);
 
     event.preventDefault();
 }
@@ -70,6 +73,7 @@ function validarFormulario(event) {
 
 function manejarErrores(errores) {
     errorNombre = errores[0]; //nombre
+    errorCiudad = errores[1]; //ciudad
     if (errorNombre) {
         $form.nombre.ClassName = `error`;
     } else {
