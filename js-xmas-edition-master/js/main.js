@@ -79,33 +79,32 @@ function validarFormulario(event) {
     event.preventDefault();
 }
 
-let nombreBox = document.querySelector(`.nombre`)
-nombreBox.className = `error`;
-
 function manejarErrores(errores) {
   
+  
+    
     errorNombre = errores.nombre; //nombre
     errorCiudad = errores.ciudad; //ciudad
     errorDescripcionRegalo = errores.descripcionRegalo; //descripcion regalo
 
     if (errorNombre) {
-        $form.nombre.ClassName = "error";
+        $form.nombre.className = "error";
     } else {
-        $form.nombre.ClassName = "";
+        $form.nombre.className = "";
     };
 
     if (errorCiudad) {
-        $form.ciudad.ClassName = "error";
+        $form.ciudad.className = "error";
     } else {
-        $form.ciudad.ClassName = "";
+        $form.ciudad.className = "";
     };
 
     if (errores.descripcionRegalo) {
-        $form[`descripcion-regalo`].ClassName = "error";
+        $form[`descripcion-regalo`].className = "error";
     } else {
-        $form[`descripcion-regalo`].ClassName = "";
+        $form[`descripcion-regalo`].className = "";
     };
-   
+
 };
 
 $form.onsubmit = validarFormulario;
