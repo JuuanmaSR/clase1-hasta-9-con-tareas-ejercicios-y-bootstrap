@@ -79,7 +79,8 @@ function validarFormulario(event) {
     event.preventDefault();
 }
 
-
+let nombreBox = document.querySelector(`.nombre`)
+nombreBox.className = `error`;
 
 function manejarErrores(errores) {
   
