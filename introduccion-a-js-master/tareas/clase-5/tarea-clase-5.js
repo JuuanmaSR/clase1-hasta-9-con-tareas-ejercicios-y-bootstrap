@@ -16,12 +16,45 @@ $botonCalcular.onclick = function()
     return false;
 }
 */
-
 //TAREA: completar tareas/clase-5/index.html para que incluya tarea-clase-5.js
 //TAREA: crear un formulario donde un usuario pueda ingresar su salario anual.
 //cuando el usuario haga click en el botón "calcular", mostrar el salario mensual
 // en una caja de texto deshabilitada. --> <input type="text" disabled id="salario-mensual"/>
 
+function tareaN1() {
+
+
+  let $botonCalcular = document.querySelector(`#calcular`).onclick = function (event) {
+
+    const salarioMensualUsuario = Number(document.querySelector(`#salario-mensual-usuario`).value);
+    const salarioAnual = calcularSalarioAnual(salarioMensualUsuario);
+
+    mostrarResultadoSalarioAnual(salarioAnual);
+
+    event.preventDefault();
+
+  };
+
+
+  function mostrarResultadoSalarioAnual(salarioAnual) {
+    let mostrarResultado = document.querySelector(`#resultado-salario-anual`);
+    mostrarResultado.value = `$${salarioAnual}`;
+  };
+
+  function calcularSalarioAnual(salarioMensual) {
+    return salarioMensual * 12;
+  };
+
+
+};
+tareaN1();
+
+
+
+
+
+
+// ** TAREA REALIZADA !! ** //
 //TAREA: En otro archivo html (no Index) y otro archivo js (no tarea-clase-5.js),
 // creá un formulario que capture el primer nombre, segundo nombre, apellido/s y edad del usuario
 // también vamos a crear un <h1> que diga Bienvenido!
@@ -41,6 +74,8 @@ Ejemplo form:
 *
 * */
 
+
+///***TAREA REALIZADA !!***/
 //TAREA: En otro archivo distinto,
 // Por cada clase de r/argentina programa existente, vamos a pedir:
 // horas, minutos y segundos de cada video. Ej. Si un video dura

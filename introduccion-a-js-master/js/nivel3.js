@@ -123,7 +123,10 @@
 // TAREA: Ahora te toca a vos! — Obtené la etiqueta h1 de la página y guardala en una variable
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
-
+let nuestroTitulo = document.querySelector(`h1`);
+console.log(nuestroTitulo);
+console.log(nuestroTitulo.innerText);
+nuestroTitulo.innerText = `Hola  r/Argentina programa!`
 
 
 
@@ -146,6 +149,7 @@
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
+let mediaLinks = document.querySelectorAll(`li`);
 
 
 
@@ -153,7 +157,8 @@
 
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
-
+const arrayDeLinks = [];
+console.log(mediaLinks.length);
 
 
 
@@ -162,7 +167,11 @@
 // TAREA: ¿Te acordás de los bucles del nivel 2? Usando lo que sabés de ellos, realizá iteraciones
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 
-
+for (let i = 0; i < mediaLinks.length; i++) {
+    console.log(
+        mediaLinks[i].innerText
+    );
+};
 
 
 
@@ -182,9 +191,8 @@
 */
 
 // TAREA: Obtené el contenido de nuestro elemento 'h1'
-// y utilizá console.log para mostrarlo.
-
-
+// y utilizá console.log para mostrarlo
+console.log(nuestroTitulo.textContent)
 
 
 
@@ -205,6 +213,7 @@
 
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
+nuestroTitulo.textContent = `Hola r/Argentina programa el dia es hoy!`;
 
 
 
@@ -223,8 +232,8 @@
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-
-
+let $logoPagina = document.querySelector(`img`);
+$logoPagina.src = `img/kittens.jpeg`;
 
 
 
@@ -248,7 +257,7 @@
 
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
-
+nuestroTitulo.style.backgroundColor = `lightblue`;
 
 
 
@@ -277,7 +286,10 @@
 //       en nuestra cabecera.
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
-
+let cabeceraPagina = document.querySelector(`header`);
+let nuevaCabecera = document.createElement(`img`);
+nuevaCabecera.src = `img/woman_bw.jpg`;
+cabeceraPagina.appendChild(nuevaCabecera);
 
 
 
@@ -288,3 +300,31 @@
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+
+const $botonIngreso = document.querySelector(`#ingresar`);
+
+
+$botonIngreso.onclick = function (event) {
+    const $edadUsuario = Number(document.querySelector(`#edad-usuario`).value)
+    const $nombreUsuario = document.querySelector(`#nombre-usuario`).value;
+    let textoResultado;
+    let $validarDocumentoUsuario = document.querySelector(`#documento-usuario`).value;
+
+
+    if ($validarDocumentoUsuario.toLowerCase() === `si` && $edadUsuario >= 18) {
+
+        textoResultado = ` Hola ${$nombreUsuario} podes ingresar al bar!!`;
+
+    } else {
+
+        textoResultado = ` Hola ${$nombreUsuario} No podes ingresar al bar!!`;
+
+    }
+
+
+    document.querySelector(`#resultado`).innerText = textoResultado;
+
+    event.preventDefault();
+
+};
+

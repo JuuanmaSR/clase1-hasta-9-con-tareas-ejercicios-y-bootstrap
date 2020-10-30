@@ -4,6 +4,276 @@
 Estos desafíos de coding están enfocados para los principiantes, por lo tanto las soluciones fueron implementadas
 usando  elementos de programación simples y clásicos.
 */
+function desafioProgramacion1() {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  };
+};
+//desafioProgramacion1();
+
+function desafioProgramacion2() {
+
+  for (let i = 1; i <= 100; i++) {
+
+    if (i % 2 != 0) {
+      console.log(i);
+    };
+
+  };
+};
+//desafioProgramacion2();
+
+function desafioProgramacion3() {
+  let resultado = 0;
+  for (let i = 0; i <= 10; i++) {
+    resultado = 7 * i;
+    console.log(resultado);
+  }
+};
+
+//desafioProgramacion3();
+
+
+function desafioProgramacion4() {
+  let resultado = 0;
+  let factor1 = 1;
+
+  while (factor1 <= 10) {
+    for (let i = 0; i <= 10; i++) {
+
+      resultado = factor1 * i;
+      console.log(`${factor1} * ${i} = ${resultado}`);
+
+
+      ;
+    }
+    factor1++;
+  };
+
+};
+//desafioProgramacion4();
+
+function desafioProgramacion5() {
+  const miArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let resultado = 0;
+
+  for (let i = 0; i < miArray.length; i++) {
+    resultado += miArray[i];
+
+  }
+  console.log(resultado);
+};
+//desafioProgramacion5();
+
+function desafioProgramacion6() {
+  let resultado = 1;
+
+  for (let i = 10; i >= 1; i--) {
+    resultado *= i;
+
+  };
+  console.log(resultado);
+};
+//desafioProgramacion6();
+
+function desafioProgramacion7() {
+  resultado = 0
+
+  for (let i = 11; i <= 30; i++) {
+    if (i % 2 != 0) {
+      resultado += i;
+    }
+  }
+
+  console.log(resultado)
+
+};
+//desafioProgramacion7();
+
+function desafioProgramacion8() {
+  let celsius = 20;
+  let fahrenheit = 0;
+
+  function CelsiusTofahrenheit(Celsius) {
+    return fahrenheit = (celsius * 1.8) + 32;
+  }
+
+  console.log(CelsiusTofahrenheit(celsius));
+};
+//desafioProgramacion8();
+
+
+function desafioProgramacion9() {
+
+  let celsius = 0;
+  let fahrenhei = 20;
+  function fahrenheiToCelsius(fahrenhei) {
+    return celsius = (fahrenhei - 32) / 1.8;
+  };
+  console.log(fahrenheiToCelsius(fahrenhei));
+};
+//desafioProgramacion9();
+
+
+function desafioProgramacion10() {
+  const miArray = [10, 10, 10, 10];
+  let resultado = 0;
+  for (let i = 0; i < miArray.length; i++) {
+    resultado += miArray[i];
+  };
+  return console.log(resultado);
+
+};
+//desafioProgramacion10();
+
+function desafioProgramacion11() {
+  const myArrayPromedio = [50, 25, 64, 85, 98, 41, 75, 21];
+  let sumaTotalArray = 0;
+  let promedioFinal = 0;
+  function calcularPromedioArray() {
+    for (let i = 0; i < myArrayPromedio.length; i++) {
+      sumaTotalArray += myArrayPromedio[i];
+
+    };
+    promedioFinal = sumaTotalArray / myArrayPromedio.length
+    return console.log(promedioFinal);
+
+  };
+  calcularPromedioArray();
+
+};
+//desafioProgramacion11();
+
+function desafioProgramacion12() {
+  const arrayDePartida = [-2, -12, -58, 5, 45, 87, 96, 35, 47, -147];
+  const arrayDeLlegada = [];
+
+  for (let i = 0; i < arrayDePartida.length; i++) {
+    if (arrayDePartida[i] > 0) {
+      arrayDeLlegada.push(arrayDePartida[i]);
+    };
+  }
+  console.log(arrayDeLlegada);
+
+};
+//desafioProgramacion12();
+
+function desafioProgramacion13() {
+  const myArray = [10, 8, 25, 24, 62, 32, 58, 59]
+  let acumulador = 0;
+  for (let i = 0; i < myArray.length; i++) {
+
+    if (acumulador < myArray[i]) {
+      acumulador = myArray[i]
+    };
+
+  }
+  console.log(`Maximo numero del array es:${acumulador}`);
+};
+//desafioProgramacion13();
+
+function desafioProgramacion14() {
+  let num1 = 0;
+  console.log(num1)
+  let num2 = 1;
+  console.log(num2)
+  let numFi = 0;
+  for (let i = 2; i < 10; i++) {
+    numFi = num1 + num2
+    console.log(numFi);
+    num1 = num2;
+    num2 = numFi;
+  };
+
+};
+//desafioProgramacion14();
+
+function desafioProgramacion15() {
+  function encontrarFibonacci(n) {
+    if (n == 0)
+      return 0;
+
+    if (n == 1)
+      return 1;
+
+    return encontrarFibonacci(n - 1) + encontrarFibonacci(n - 2);
+  }
+
+  let n = encontrarFibonacci(10);
+  console.log(n);
+};
+//desafioProgramacion15();
+
+function desafioProgramacion16() {
+
+  let contador1 = 1;
+  let contador2 = 0;
+  let valorBoolean;
+
+  for (let i = 1; i < 50; i++) {
+    while (contador1 <= i) {
+
+      while (contador1 <= i) {
+
+        if (i % contador1 === 0) {
+          contador2++
+        };
+
+
+
+        contador1++
+      }
+
+      if (contador2 === 2) {
+        valorBoolean = true;
+      } else {
+        valorBoolean = false;
+      }
+
+
+    }
+
+    contador1 = 1;
+    contador2 = 0;
+    console.log(`${i} es primo ? : ${valorBoolean} `);
+  };
+};
+
+//desafioProgramacion16();
+
+function desafioProgramacion17() {
+  function sumaDeDigitos(num) {
+
+    let number =  num;
+    let auxiliar = num;
+    let resultadoSuma = 0;
+
+    while (number > 0) {
+      resultadoSuma += (number % 10);
+      number =Math.trunc( number / 10);
+      
+
+    };
+
+
+    console.log(
+      `La suma de los digitos del numero ${auxiliar} dio como resultado: ${resultadoSuma}`
+    );
+
+
+  };
+
+  sumaDeDigitos(7);
+
+
+
+};
+//desafioProgramacion17();
+
+function desafioProgramacion18(){
+
+};
+//desafioProgramacion18();
 
 /*
 Desafío de programación #1: Imprimí los números del 1 al 10
