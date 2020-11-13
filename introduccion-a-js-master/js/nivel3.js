@@ -119,15 +119,17 @@
     // Eso quiere decir que se pueden cambiar los atributos y propiedades del elemento,
     // pero no la variable en sí misma. Vas a ver esto en acción ahora mismo.
 */
-
+let nuestroTwitter = document.querySelector(`.twitter`);
+console.log(
+    nuestroTwitter
+);
 // TAREA: Ahora te toca a vos! — Obtené la etiqueta h1 de la página y guardala en una variable
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
-let nuestroTitulo = document.querySelector(`h1`);
-console.log(nuestroTitulo);
-console.log(nuestroTitulo.innerText);
-nuestroTitulo.innerText = `Hola  r/Argentina programa!`
-
+let nuestroTitulo = document.querySelector(`h1`)
+console.log(
+    nuestroTitulo
+);
 
 
 
@@ -157,7 +159,6 @@ let mediaLinks = document.querySelectorAll(`li`);
 
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
-const arrayDeLinks = [];
 console.log(mediaLinks.length);
 
 
@@ -170,7 +171,7 @@ console.log(mediaLinks.length);
 for (let i = 0; i < mediaLinks.length; i++) {
     console.log(
         mediaLinks[i].innerText
-    );
+    )
 };
 
 
@@ -183,9 +184,9 @@ for (let i = 0; i < mediaLinks.length; i++) {
     Ok, hasta acá todo bien. Peeeroo, ¿que pasa si queremos obtener SOLO el texto
     de nuestra etiqueta 'h1'?
     Los elementos de página tienen una propiedad para esto: '.textContent'.
-
+ 
     Ejemplo:
-
+ 
     nuestroTwitter.textContent;
     // Obtendremos el texto: 'Twitter: @MusesCodeJSSyd @MusesCodeJSMelb @MCJSHobart @MCJSPerth @BrisMuses'.
 */
@@ -291,6 +292,12 @@ let nuevaCabecera = document.createElement(`img`);
 nuevaCabecera.src = `img/woman_bw.jpg`;
 cabeceraPagina.appendChild(nuevaCabecera);
 
+let textoDePrueba = document.createElement(`h2`);
+let textoIntroduciodoAprueba = document.createTextNode(`Ingreso al bar!`);
+textoDePrueba.appendChild(textoIntroduciodoAprueba);
+cabeceraPagina.appendChild(textoDePrueba);
+
+
 
 
 
@@ -305,11 +312,10 @@ const $botonIngreso = document.querySelector(`#ingresar`);
 
 
 $botonIngreso.onclick = function (event) {
-    const $edadUsuario = Number(document.querySelector(`#edad-usuario`).value)
-    const $nombreUsuario = document.querySelector(`#nombre-usuario`).value;
-    let textoResultado;
+    let $edadUsuario = Number(document.querySelector(`#edad-usuario`).value)
+    let $nombreUsuario = document.querySelector(`#nombre-usuario`).value;
     let $validarDocumentoUsuario = document.querySelector(`#documento-usuario`).value;
-
+    let textoResultado;
 
     if ($validarDocumentoUsuario.toLowerCase() === `si` && $edadUsuario >= 18) {
 

@@ -5,6 +5,7 @@ let promedioDelArray = 0;
 let menorNumeroDelArray = 0;
 let mayorNumeroDelArray = 0;
 let numeroMasFrecuente = 0;
+
 function introducirElementosAlArray() {
 
     for (let i = 0; i < listas.length; i++) {
@@ -23,7 +24,7 @@ $botonCalcular.onclick = function (event) {
     calcularMenorNumero(arrayDelistas);
     calcularMayorNumero(arrayDelistas);
     calcularNumeroMasFrecuente(arrayDelistas);
-    mostrarResultados(promedioDelArray,menorNumeroDelArray,mayorNumeroDelArray,numeroMasFrecuente);
+    mostrarResultados(promedioDelArray, menorNumeroDelArray, mayorNumeroDelArray, numeroMasFrecuente);
 
 
 
@@ -37,7 +38,7 @@ function calcularMenorNumero(parametro) {
     for (let i = 0; i < parametro.length; i++) {
 
         if (parametro[i] < numeroMenorTemporal) {
-            numeroMenorTemporal = parametroo[i];
+            numeroMenorTemporal = parametro[i];
         }
     }
     menorNumeroDelArray = numeroMenorTemporal;
@@ -82,7 +83,7 @@ function calcularPromedio(parametro) {
         sumaTotal += parametro[i];
     }
     promedioDelArray = sumaTotal / parametro.length;
-    
+
 };
 
 function mostrarResultados(promedio, menorNumero, mayorNumero, numeroFrecuente) {
@@ -92,4 +93,4 @@ function mostrarResultados(promedio, menorNumero, mayorNumero, numeroFrecuente) 
     document.querySelector(`#numero-mas-grande`).textContent = `El numero mas grande es: ${mayorNumero}`;
     document.querySelector(`#numero-mas-frecuente`).textContent = `El numero mas frecuente es: ${numeroFrecuente}`;
     document.querySelector(`#mostrar-resultado`).className = ``;
-}
+};

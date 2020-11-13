@@ -24,7 +24,7 @@ $botonCalcular.onclick = function()
 function tareaN1() {
 
 
-  let $botonCalcular = document.querySelector(`#calcular`).onclick = function (event) {
+  let $botonCalcularSalarioAnual = document.querySelector(`#calcular`).onclick = function (event) {
 
     const salarioMensualUsuario = Number(document.querySelector(`#salario-mensual-usuario`).value);
     const salarioAnual = calcularSalarioAnual(salarioMensualUsuario);
@@ -83,6 +83,9 @@ Ejemplo form:
 // cada dato.
 // al apretar el botón "Calcular tiempo total", debe mostrar en un
 // <strong> pre-creado el tiempo total de los videos.
+
+
+///***TAREA REALIZADA !!***/
 
 //TAREA: En otro archivo distinto,
 // Crear una lista de <ol> y <li> que contengan sólo números.
