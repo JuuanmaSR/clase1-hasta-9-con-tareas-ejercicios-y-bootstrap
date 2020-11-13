@@ -1,4 +1,4 @@
-
+///*** TAREA 2 CLASE 6 ***///
 let indice = 0;
 document.querySelector(`#agregar`).onclick = function (event) {
 
@@ -97,12 +97,10 @@ function mostrarBotonCalcular() {
 };
 
 
-
 function mostrarResultado() {
     let resultado = document.querySelector(`#analisis`);
     resultado.className = ``;
 };
-
 
 
 function mostrarBotonResetear() {
@@ -115,7 +113,6 @@ function ocultarResultado() {
     let resultado = document.querySelector(`#analisis`);
     resultado.className = `oculto`;
 };
-
 
 
 function ocultarBotonResetear() {
@@ -135,4 +132,4 @@ function resetear() {
     ocultarBotonResetear();
     ocultarBotonCalcular()
     indice = 0;
-}
+};
