@@ -1,3 +1,39 @@
+
+function probarValidarNombre() {
+    console.assert(
+        validarNombre(``) ===
+         `El campo nombre debe tener al menos 1 caracter`,
+        `Validar nombre no funciono con un string vacio`
+    );
+
+    console.assert(
+        validarNombre(`asdasdasdasdasdasdasdasdasdasdasdasdasdsaaaaaaaaaaa`) ===
+        `El campo nombre debe tener menos de 50 caracteres`,
+        `Validar nombre no funciono con un string mayor a 50 caracteres`
+    );
+
+    console.assert(
+        validarNombre(`Fabricio`) ===
+         ``,
+        `Validar nombre no funciono con un string correcto`
+    );
+
+   
+};
+probarValidarNombre();
+
+function probarValidarCiudad(){
+
+};
+
+function probarValidarDescripcionRegalo(){
+
+};
+
+
+
+
+/*
 function probarValidarNombre() {
     console.assert(
         validarNombre('') === 'Este campo debe tener al menos 1 caracter',
@@ -25,7 +61,7 @@ function probarValidarCiudad() {
     console.assert(validarCiudad(``) === `El campo ciudad no debe estar vacio`,
         `Validar ciudad no funciono con un string vacio`
 
-    );
+    ); 
 
     console.assert(validarCiudad(`Buenos Aires`) === ``,
         `Validar ciudad no funciono con un string correcto`
@@ -57,7 +93,7 @@ function probarValidarDescripcionRegalo() {
         validarNombre('') === 'Este campo debe tener al menos 1 caracter',
         'Validar nombre no validó que el nombre no sea vacío',
     );
-  
+
     console.assert(
         validarNombre(
             '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111') ===
@@ -66,7 +102,8 @@ function probarValidarDescripcionRegalo() {
     );
   }
   probarValidarCiudad();
-  
+
   probarValidarNombre();
   probarValidarDescripcionRegalo();
-  
+
+*/
