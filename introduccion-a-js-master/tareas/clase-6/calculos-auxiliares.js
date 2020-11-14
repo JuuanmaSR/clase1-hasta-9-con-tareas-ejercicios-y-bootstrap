@@ -25,7 +25,7 @@ function obtenerMenorNumero(numeros) {
 
 function obtenerPromedio(numeros) {
     let sumaTotal = 0;
-    
+
     for (let i = 0; i < numeros.length; i++) {
         sumaTotal += numeros[i]
     };

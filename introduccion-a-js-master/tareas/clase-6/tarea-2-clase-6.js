@@ -31,7 +31,7 @@ document.querySelector(`#calcular`).onclick = function (event) {
     event.preventDefault();
 };
 
-document.querySelector(`#resetear`).onclick=function(){
+document.querySelector(`#resetear`).onclick = function () {
     resetear();
 }
 
@@ -80,6 +80,9 @@ function obtenerSalarios() {
     let $integrantes = document.querySelectorAll(`.integrantes input`)
     let $salariosAnuales = []
     for (let i = 0; i < $integrantes.length; i++) {
+        if ($integrantes[i].value === ``) {
+            continue;
+        }
         $salariosAnuales.push(Number($integrantes[i].value));
     };
     return $salariosAnuales;
@@ -121,7 +124,7 @@ function ocultarBotonResetear() {
 };
 
 
-function ocultarBotonCalcular(){
+function ocultarBotonCalcular() {
     let $botonCalcular = document.querySelector(`#calcular`);
     $botonCalcular.className = `oculto`;
 };

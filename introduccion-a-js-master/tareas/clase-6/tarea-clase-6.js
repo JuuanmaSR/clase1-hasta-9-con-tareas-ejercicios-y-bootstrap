@@ -6,13 +6,13 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
 
-//**BOTONES**/
+//**BOTONES**//
 document.querySelector(`#siguiente-paso`).onclick = function (event) {
     const $cantidadIntegrantes = document.querySelector(`#cantidad-de-integrantes`).value;
     const cantidadIntegrantes = Number($cantidadIntegrantes);
     borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
-    
+
     event.preventDefault();
 
 
@@ -20,19 +20,19 @@ document.querySelector(`#siguiente-paso`).onclick = function (event) {
 
 document.querySelector(`#resetear`).onclick = resetear;
 
-document.querySelector(`#calcular`).onclick = function(event){
+document.querySelector(`#calcular`).onclick = function (event) {
     const edades = obtenerEdadesIntegrantes();
     mostrarEdad(`mayor`, obtenerMayorNumero(edades));
     mostrarEdad(`menor`, obtenerMenorNumero(edades));
-    mostrarEdad(`promedio`,obtenerPromedio(edades));
+    mostrarEdad(`promedio`, obtenerPromedio(edades));
     mostrarResultado();
-    
-    
+
+
     event.preventDefault();
 };
-//**BOTONES**/
+//**BOTONES**//
 
-//**SECTOR CREAR**/
+//**SECTOR CREAR**//
 function crearIntegrante(indice) {
     const $div = document.createElement(`div`);
     $div.className = `integrantes`;
@@ -52,9 +52,9 @@ function crearIntegrante(indice) {
 
 function crearIntegrantes(cantidadIntegrantes) {
 
-    if(cantidadIntegrantes > 0){
+    if (cantidadIntegrantes > 0) {
         mostrarBotonCalcular();
-    }else{
+    } else {
         resetear();
     };
 
@@ -63,9 +63,9 @@ function crearIntegrantes(cantidadIntegrantes) {
     }
 
 };
-//**SECTOR CREAR**/
+//**SECTOR CREAR**//
 
-//**SECTOR MOSTRAR Y OBTENER**/
+//**SECTOR MOSTRAR Y OBTENER**//
 function mostrarBotonCalcular() {
     const $botonCalcular = document.querySelector(`#calcular`);
     $botonCalcular.className = ``
@@ -73,22 +73,25 @@ function mostrarBotonCalcular() {
 function obtenerEdadesIntegrantes() {
     const $integrantes = document.querySelectorAll(`.integrantes input`);
     const $edades = [];
-    for (let i = 0; i < $integrantes.length; i++){
+    for (let i = 0; i < $integrantes.length; i++) {
+        if ($integrantes[i].value === ``) {
+            continue;
+        }
         $edades.push(Number($integrantes[i].value));
     };
     return $edades;
 }
-function mostrarEdad(tipo,valor){
+function mostrarEdad(tipo, valor) {
     document.querySelector(`#${tipo}-edad `).textContent = valor;
 }
-function mostrarResultado(){
+function mostrarResultado() {
     let $resultado = document.querySelector(`#analisis`);
     $resultado.className = ``;
 }
 
-//**SECTOR MOSTRAR Y OBTENER**/
+//**SECTOR MOSTRAR Y OBTENER**//
 
-//**SECTOR OCULTAR Y BORRAR**/
+//**SECTOR OCULTAR Y BORRAR**//
 function borrarIntegrantesAnteriores() {
     const $integrantes = document.querySelectorAll(`.integrantes`);
     for (let i = 0; i < $integrantes.length; i++) {
@@ -103,7 +106,7 @@ function ocultarBotonCalcular() {
     $botonCalcular.className = `oculto`;
 }
 
-function ocultarResultado(){
+function ocultarResultado() {
     let $resultado = document.querySelector(`#analisis`);
     $resultado.className = `oculto`;
 }
@@ -114,7 +117,7 @@ function resetear() {
     ocultarResultado();
 }
 
-//**SECTOR OCULTAR Y BORRAR**/
+//**SECTOR OCULTAR Y BORRAR**//
 
 
 /*
