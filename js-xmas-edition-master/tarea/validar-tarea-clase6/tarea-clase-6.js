@@ -58,6 +58,9 @@ function crearIntegrantes(cantidadIntegrantes) {
     } else {
         resetear();
     };
+    if (/^[0-9]+$/.test(cantidadIntegrantes)) {
+
+
         if (cantidadIntegrantes >= 1) {
             mostrarBotonCalcular();
         } else {
