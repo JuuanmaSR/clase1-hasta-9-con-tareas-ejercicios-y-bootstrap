@@ -58,11 +58,22 @@ function crearIntegrantes(cantidadIntegrantes) {
     } else {
         resetear();
     };
+        if (cantidadIntegrantes >= 1) {
+            mostrarBotonCalcular();
+        } else {
+            resetear();
+        };
 
     for (let i = 0; i < cantidadIntegrantes; i++) {
         crearIntegrante(i);
     }
 
+        for (let i = 0; i < cantidadIntegrantes; i++) {
+            crearIntegrante(i);
+        }
+    }else{
+        resetear()
+    }
 };
 //**SECTOR CREAR**//
 
