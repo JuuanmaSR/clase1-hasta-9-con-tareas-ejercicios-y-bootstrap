@@ -11,6 +11,8 @@ document.querySelector(`#siguiente-paso`).onclick = function (event) {
     const $cantidadIntegrantes = document.querySelector(`#cantidad-de-integrantes`).value;
     const cantidadIntegrantes = Number($cantidadIntegrantes);
 
+    $formPrimerPaso.onsubmit = validarPrimerFormulario();
+
     borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
     
