@@ -4,12 +4,7 @@ const ciudad = $form.ciudad.value;
 const comportamiento = $form.comportamiento.value;
 const descripcionRegalo = $form[`descripcion-regalo`].value;
 
-/*
-console.log(nombre);
-console.log(ciudad);
-console.log(comportamiento);
-console.log(descripcionRegalo);
-*/
+
 
 function validarNombre(nombre) {
     if (nombre.length === 0) {
