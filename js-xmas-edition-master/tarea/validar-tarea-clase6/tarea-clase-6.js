@@ -15,10 +15,11 @@ document.querySelector(`#siguiente-paso`).onclick = function (event) {
 
     borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
-    
+
+
     event.preventDefault();
 
-    
+
 
 }
 
@@ -49,17 +50,12 @@ function crearIntegrante(indice) {
     $div.appendChild($input);
     const $integrantes = document.querySelector(`#integrantes`);
     $integrantes.appendChild($div);
-    
+
 }
 
 
 function crearIntegrantes(cantidadIntegrantes) {
 
-    if (cantidadIntegrantes > 0) {
-        mostrarBotonCalcular();
-    } else {
-        resetear();
-    };
     if (/^[0-9]+$/.test(cantidadIntegrantes)) {
 
 
@@ -69,9 +65,7 @@ function crearIntegrantes(cantidadIntegrantes) {
             resetear();
         };
 
-    for (let i = 0; i < cantidadIntegrantes; i++) {
-        crearIntegrante(i);
-    }
+
 
         for (let i = 0; i < cantidadIntegrantes; i++) {
             crearIntegrante(i);
