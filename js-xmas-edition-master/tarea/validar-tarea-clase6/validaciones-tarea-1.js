@@ -25,7 +25,7 @@ function validarPrimerFormulario() {
     const errores = {
         "cantidad-integrantes": errorCantidadIntegrantes
     };
-
+    borrarErroresAcumulados();
     manejarErrores(errores);
 
 
@@ -34,10 +34,16 @@ function validarPrimerFormulario() {
 
 function manejarErrores(errores) {
     const keys = Object.keys(errores);
+    const $errores = document.querySelector(`#errores-mostrados`);
 
     keys.forEach(function (key) {
         const error = errores[key]
         if (error) {
+            let $error = document.createElement(`li`);
+            $error.className = `errores-mostrados`;
+            $error.innerText = error;
+            $errores.appendChild($error);
+
             $formPrimerPaso[key].className = `error`;
 
         } else {
@@ -49,3 +55,10 @@ function manejarErrores(errores) {
 
 };
 
+function borrarErroresAcumulados(){
+    const $erroresAcumulados = document.querySelectorAll(`.errores-mostrados`);
+
+    $erroresAcumulados.forEach(function(error){
+        error.remove();
+    });
+};
