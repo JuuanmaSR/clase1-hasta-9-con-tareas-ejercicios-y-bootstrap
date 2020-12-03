@@ -62,3 +62,14 @@ function borrarErroresAcumulados(){
         error.remove();
     });
 };
+
+
+const $formSegundoPaso = document.querySelector(`#calculador-de-edades-por-integrante`);
+
+function validarEdadesIntegrantes($edadDeIntegrantes){
+
+};
+
+function validarSegundoFormulario(){
+
+};
