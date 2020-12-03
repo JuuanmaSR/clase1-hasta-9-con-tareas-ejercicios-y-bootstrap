@@ -26,7 +26,11 @@ document.querySelector(`#siguiente-paso`).onclick = function (event) {
 document.querySelector(`#resetear`).onclick = resetear;
 
 document.querySelector(`#calcular`).onclick = function (event) {
+    
     const edades = obtenerEdadesIntegrantes();
+
+    
+
     mostrarEdad(`mayor`, obtenerMayorNumero(edades));
     mostrarEdad(`menor`, obtenerMenorNumero(edades));
     mostrarEdad(`promedio`, obtenerPromedio(edades));
@@ -85,9 +89,7 @@ function obtenerEdadesIntegrantes() {
     const $integrantes = document.querySelectorAll(`.integrantes input`);
     const $edades = [];
     for (let i = 0; i < $integrantes.length; i++) {
-        if ($integrantes[i].value === ``) {
-            continue;
-        }
+        
         $edades.push(Number($integrantes[i].value));
     };
     return $edades;
