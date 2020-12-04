@@ -103,6 +103,7 @@ function manejarErroresSegundoFormulario() {
         if (edades[i].value == 0) {
             edades[i].className = `error`
             acumuladorDeErroresCeros++;
+            acumuladorDeErrores++;
             continue;
         } else {
             edades[i].className = ``
@@ -110,12 +111,14 @@ function manejarErroresSegundoFormulario() {
         if (edades[i].value < 0) {
             edades[i].className = `error`
             acumuladorDeErroresNumerosNegativos++;
+            acumuladorDeErrores++;
         } else {
             edades[i].className = ``
         };
         if (!/^[0-9]+$/.test(edades[i].value)) {
             edades[i].className = `error`
             acumuladorDeErroresDecimales++;
+            acumuladorDeErrores++
         } else {
             edades[i].className = ``
         };
