@@ -97,13 +97,13 @@ function validarErroresEdadesEnDecimales(acumuladorDeErroresDecimales) {
 
 function manejarErroresSegundoFormulario() {
     const edades = document.querySelectorAll(`.integrantes input`);
-    let acumuladorDeErrores = 0;
+    let contadorDeErrores = 0;
    
     for (let i = 0; i < edades.length; i++) {
         if (edades[i].value == 0) {
             edades[i].className = `error`
             acumuladorDeErroresCeros++;
-            acumuladorDeErrores++;
+            contadorDeErrores++;
             continue;
         } else {
             edades[i].className = ``
@@ -111,14 +111,14 @@ function manejarErroresSegundoFormulario() {
         if (edades[i].value < 0) {
             edades[i].className = `error`
             acumuladorDeErroresNumerosNegativos++;
-            acumuladorDeErrores++;
+            contadorDeErrores++;
         } else {
             edades[i].className = ``
         };
         if (!/^[0-9]+$/.test(edades[i].value)) {
             edades[i].className = `error`
             acumuladorDeErroresDecimales++;
-            acumuladorDeErrores++
+            contadorDeErrores++;
         } else {
             edades[i].className = ``
         };
