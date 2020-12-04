@@ -70,31 +70,7 @@ let acumuladorDeErroresCeros = 0;
 let acumuladorDeErroresNumerosNegativos = 0;
 let acumuladorDeErroresDecimales = 0;
 
-function validarEdadesIntegrantes($edadDeIntegrantes) {
-    const edades = $edadDeIntegrantes
 
-
-
-    for (let i = 0; i < edades.length; i++) {
-
-        if (edades[i] === 0) {
-            acumuladorDeErroresCeros++;
-            console.log(acumuladorDeErroresCeros);
-            continue;
-        };
-        if (edades[i] < 0) {
-            acumuladorDeErroresNumerosNegativos++;
-            continue;
-        };
-        if (!/^[0-9]+$/.test(edades[i])) {
-            acumuladorDeErroresDecimales++;
-            continue;
-        }
-
-    };
-
-
-};
 
 function validarErroresEdadesEnCero(acumuladorDeErroresCeros) {
     if (acumuladorDeErroresCeros != 0) {
@@ -122,17 +98,20 @@ function manejarErroresSegundoFormulario() {
     for (let i = 0; i < edades.length; i++) {
         if (edades[i].value == 0) {
             edades[i].className = `error`
+            acumuladorDeErroresCeros++;
             continue;
         } else {
             edades[i].className = ``
         };
         if (edades[i].value < 0) {
             edades[i].className = `error`
+            acumuladorDeErroresNumerosNegativos++;
         } else {
             edades[i].className = ``
         };
         if (!/^[0-9]+$/.test(edades[i].value)) {
             edades[i].className = `error`
+            acumuladorDeErroresDecimales++;
         } else {
             edades[i].className = ``
         };
