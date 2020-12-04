@@ -9,6 +9,10 @@ function validarCantidadIntegrantes($cantidadIntegrantes) {
         return `El campo cantidad de integrantes no puede valer cero`
     }
 
+    if($cantidadIntegrantes < 0){
+        return `El campo cantidad de integrantes no puede tener numeros negativos`
+    };
+
     if (!/^[0-9]+$/.test($cantidadIntegrantes)) {
         return `El campo cantidad de integrantes no puede tener decimales`
     };

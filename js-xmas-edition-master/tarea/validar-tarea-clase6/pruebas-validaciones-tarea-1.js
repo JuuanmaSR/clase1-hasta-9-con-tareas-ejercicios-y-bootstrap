@@ -13,6 +13,11 @@ function probarValidarCantidadDeIntegrantes() {
         validarCantidadIntegrantes(0.5) === `El campo cantidad de integrantes no puede tener decimales`,
         `Validar cantidad de integrantes no funciono con un valor con decimales`
     );
+
+    console.assert(
+        validarCantidadIntegrantes(-1) === `El campo cantidad de integrantes no puede tener numeros negativos`,
+        `Validar cantidad de integrantes no funciono con un valor negativo`
+    );
 };
 probarValidarCantidadDeIntegrantes();
 
