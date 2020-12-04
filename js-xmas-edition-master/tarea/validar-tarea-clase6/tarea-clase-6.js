@@ -28,7 +28,7 @@ document.querySelector(`#resetear`).onclick = resetear;
 document.querySelector(`#calcular`).onclick = function (event) {
     
     const edades = obtenerEdadesIntegrantes();
-    
+
     
 
     mostrarEdad(`mayor`, obtenerMayorNumero(edades));

@@ -50,98 +50,26 @@ function manejarErrores(errores) {
             $formPrimerPaso[key].className = ``;
         }
 
-
+        console.log(errores[key]);
     });
 
 };
 
-function borrarErroresAcumulados() {
+function borrarErroresAcumulados(){
     const $erroresAcumulados = document.querySelectorAll(`.errores-mostrados`);
 
-    $erroresAcumulados.forEach(function (error) {
+    $erroresAcumulados.forEach(function(error){
         error.remove();
     });
 };
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const $formSegundoPaso = document.querySelector(`#calculador-de-edades-por-integrante`);
 
-let acumuladorDeErroresCeros = 0;
-let acumuladorDeErroresNumerosNegativos = 0;
-let acumuladorDeErroresDecimales = 0;
-
-function validarEdadesIntegrantes($edadDeIntegrantes) {
-    const edades = $edadDeIntegrantes
-
-
-
-    for (let i = 0; i < edades.length; i++) {
-
-        if (edades[i] === 0) {
-            acumuladorDeErroresCeros++;
-            console.log(acumuladorDeErroresCeros);
-            continue;
-        };
-        if (edades[i] < 0) {
-            acumuladorDeErroresNumerosNegativos++;
-            continue;
-        };
-        if (!/^[0-9]+$/.test(edades[i])) {
-            acumuladorDeErroresDecimales++;
-            continue;
-        }
-
-    };
-
+function validarEdadesIntegrantes($edadDeIntegrantes){
 
 };
 
-function validarErroresEdadesEnCero(acumuladorDeErroresCeros) {
-    if (acumuladorDeErroresCeros != 0) {
-        return `Los campos edad integrante no pueden valer cero o estar vacios`
-    };
-    return ``;
-};
-function validarErroresEdadesEnNumerosNegativos(acumuladorDeErroresNumerosNegativos) {
-    if (acumuladorDeErroresNumerosNegativos != 0) {
-        return `Los campos edad integrante no pueden tener numeros negativos`
-    };
-    return ``;
-};
-function validarErroresEdadesEnDecimales(acumuladorDeErroresDecimales) {
-    if (acumuladorDeErroresDecimales != 0) {
-        return `Los campos edad integrantes no pueden tener decimales`
-    };
-    return ``;
-}
-
-function manejarErroresSegundoFormulario() {
-    const edades = document.querySelectorAll(`.integrantes input`);
-    let acumuladorDeErrores = 0;
-   
-    for (let i = 0; i < edades.length; i++) {
-        if (edades[i].value == 0) {
-            edades[i].className = `error`
-            continue;
-        } else {
-            edades[i].className = ``
-        };
-        if (edades[i].value < 0) {
-            edades[i].className = `error`
-        } else {
-            edades[i].className = ``
-        };
-        if (!/^[0-9]+$/.test(edades[i].value)) {
-            edades[i].className = `error`
-        } else {
-            edades[i].className = ``
-        };
-    };
-
-}
-function mostrarErroresSegundoFormulario() {
-
-};
-function validarSegundoFormulario() {
+function validarSegundoFormulario(){
 
 };
