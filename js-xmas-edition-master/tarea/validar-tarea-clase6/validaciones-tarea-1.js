@@ -9,7 +9,7 @@ function validarCantidadIntegrantes($cantidadIntegrantes) {
         return `El campo cantidad de integrantes no puede valer cero`
     }
 
-    if($cantidadIntegrantes < 0){
+    if ($cantidadIntegrantes < 0) {
         return `El campo cantidad de integrantes no puede tener numeros negativos`
     };
 
@@ -56,10 +56,13 @@ function manejarErrores(errores) {
 
 
     });
-
+    
 };
 
 function borrarErroresAcumulados() {
+    acumuladorDeErroresCeros = 0;
+    acumuladorDeErroresDecimales = 0;
+    acumuladorDeErroresNumerosNegativos = 0;
     const $erroresAcumulados = document.querySelectorAll(`.errores-mostrados`);
 
     $erroresAcumulados.forEach(function (error) {
@@ -98,7 +101,7 @@ function validarErroresEdadesEnDecimales(acumuladorDeErroresDecimales) {
 function manejarErroresSegundoFormulario() {
     const edades = document.querySelectorAll(`.integrantes input`);
     let contadorDeErrores = 0;
-   
+
     for (let i = 0; i < edades.length; i++) {
         if (edades[i].value == 0) {
             edades[i].className = `error`
@@ -112,6 +115,7 @@ function manejarErroresSegundoFormulario() {
             edades[i].className = `error`
             acumuladorDeErroresNumerosNegativos++;
             contadorDeErrores++;
+            continue;
         } else {
             edades[i].className = ``
         };
@@ -122,12 +126,68 @@ function manejarErroresSegundoFormulario() {
         } else {
             edades[i].className = ``
         };
+
     };
 
-}
-function mostrarErroresSegundoFormulario() {
+    if (contadorDeErrores === 0) {
+        ocultarErrores();
+        mostrarResultado();
+    }else{
+        ocultarResultado()
+        mostrarErrores();
+    }
+        
+    
 
 };
+
+function mostrarErroresSegundoFormulario() {
+
+    const erroresEnCero = validarErroresEdadesEnCero(acumuladorDeErroresCeros);
+    const erroresEnDecimales = validarErroresEdadesEnDecimales(acumuladorDeErroresDecimales);
+    const erroresEnNegativos = validarErroresEdadesEnNumerosNegativos(acumuladorDeErroresNumerosNegativos);
+
+    const errores = {
+        camposConErrorCeros: erroresEnCero,
+        camposConErrorDecimales: erroresEnDecimales,
+        camposConErrorNegativos: erroresEnNegativos
+    };
+
+    const keys = Object.keys(errores);
+    const mostrarErrores = document.querySelector(`#errores-mostrados`);
+
+    keys.forEach(function (key) {
+        const error = errores[key];
+
+        if (error) {
+            const $error = document.createElement(`li`);
+            $error.className = `errores-mostrados`;
+            $error.innerText = error;
+
+            mostrarErrores.appendChild($error);
+        };
+    });
+
+};
+
 function validarSegundoFormulario() {
 
+
+    borrarErroresAcumulados()
+    manejarErroresSegundoFormulario()
+    mostrarErroresSegundoFormulario()
+
+
+
+};
+
+function ocultarErrores() {
+    let mostrarErrores = document.querySelector(`#errores-mostrados`);
+    mostrarErrores.className = `oculto`;
+
+};
+
+function mostrarErrores(){
+    let mostrarErrores = document.querySelector(`#errores-mostrados`);
+    mostrarErrores.className = ``;
 };
