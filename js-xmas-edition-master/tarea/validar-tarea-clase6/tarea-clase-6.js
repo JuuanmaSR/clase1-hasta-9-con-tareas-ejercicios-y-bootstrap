@@ -26,15 +26,16 @@ document.querySelector(`#siguiente-paso`).onclick = function (event) {
 document.querySelector(`#resetear`).onclick = resetear;
 
 document.querySelector(`#calcular`).onclick = function (event) {
-    
-    const edades = obtenerEdadesIntegrantes();
-    
-    
 
+
+  borrarErroresAcumulados();
+    const edades = obtenerEdadesIntegrantes();
     mostrarEdad(`mayor`, obtenerMayorNumero(edades));
     mostrarEdad(`menor`, obtenerMenorNumero(edades));
     mostrarEdad(`promedio`, obtenerPromedio(edades));
-    mostrarResultado();
+    
+   
+    $formSegundoPaso.onsubmit = validarSegundoFormulario();
 
     event.preventDefault();
 };
@@ -74,7 +75,7 @@ function crearIntegrantes(cantidadIntegrantes) {
         for (let i = 0; i < cantidadIntegrantes; i++) {
             crearIntegrante(i);
         }
-    }else{
+    } else {
         resetear()
     }
 };
@@ -89,7 +90,7 @@ function obtenerEdadesIntegrantes() {
     const $integrantes = document.querySelectorAll(`.integrantes input`);
     const $edades = [];
     for (let i = 0; i < $integrantes.length; i++) {
-        
+
         $edades.push(Number($integrantes[i].value));
     };
     return $edades;
@@ -128,7 +129,8 @@ function resetear() {
     borrarIntegrantesAnteriores();
     ocultarBotonCalcular();
     ocultarResultado();
-}
+    
+};
 
 //**SECTOR OCULTAR Y BORRAR**//
 
