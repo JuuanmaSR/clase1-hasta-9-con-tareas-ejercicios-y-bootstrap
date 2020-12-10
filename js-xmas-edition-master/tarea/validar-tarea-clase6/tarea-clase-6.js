@@ -66,18 +66,14 @@ function crearIntegrantes(cantidadIntegrantes) {
 
         if (cantidadIntegrantes >= 1) {
             mostrarBotonCalcular();
-        } else {
-            resetear();
-        };
+        }
 
 
 
         for (let i = 0; i < cantidadIntegrantes; i++) {
             crearIntegrante(i);
         }
-    } else {
-        resetear()
-    }
+    } 
 };
 //**SECTOR CREAR**//
 
@@ -129,7 +125,7 @@ function resetear() {
     borrarIntegrantesAnteriores();
     ocultarBotonCalcular();
     ocultarResultado();
-    
+    borrarErroresAcumulados();
 };
 
 //**SECTOR OCULTAR Y BORRAR**//
