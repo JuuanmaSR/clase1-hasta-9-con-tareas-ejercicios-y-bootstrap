@@ -21,6 +21,8 @@ document.querySelector(`#quitar`).onclick = function (event) {
 
 document.querySelector(`#calcular`).onclick = function (event) {
     let salariosAnuales = obtenerSalarios();
+    manejarErrores();
+    mostrarErroresSalariosAnuales();
     mostrarSalarios(`mayor`, calcularMayorSalarioAnual(salariosAnuales));
     mostrarSalarios(`menor`, calcularMenorSalarioAnual(salariosAnuales));
     mostrarSalarios(`promedio`, calcularPromedioSalarioAnual(salariosAnuales));
@@ -44,7 +46,7 @@ function agregarIntegrante(indice) {
     //$label.className = `integrantes`;
     const $input = document.createElement(`input`);
     //$input.className = `integrantes`;
-    $input.type = `number`;
+    
 
     $div.appendChild($label);
     $div.appendChild($input);
