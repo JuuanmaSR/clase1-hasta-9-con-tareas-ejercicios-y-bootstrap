@@ -1,5 +1,7 @@
 let acumuladorDeErroresNumerosNegativos = 0;
 let acumuladorDeErroresSalarioMalFormulado = 0;
+let acumuladorDeErroresSalariosVacios = 0;
+
 function validarSalariosAnualesEnNegativos(acumuladorDeErroresNumerosNegativos) {
     if (acumuladorDeErroresNumerosNegativos != 0) {
         return `El campo salario anual no puede contener numeros negativos`
@@ -9,8 +11,15 @@ function validarSalariosAnualesEnNegativos(acumuladorDeErroresNumerosNegativos) 
 };
 
 function validarSalarioMalFormulados(acumuladorDeErroresSalarioMalFormulado) {
-    if(acumuladorDeErroresSalarioMalFormulado != 0){
+    if (acumuladorDeErroresSalarioMalFormulado != 0) {
         return `El campo salario anual esta mal formulado y solo puede contener numeros`
+    };
+    return ``;
+};
+
+function validarSalariosVacios(acumuladorDeErroresSalariosVacios) {
+    if (acumuladorDeErroresSalariosVacios != 0) {
+        return `El campo salario anual no puede estar vacio, pero puede ser cero`
     };
     return ``;
 };
@@ -22,6 +31,12 @@ function manejarErrores() {
     let contadorDeErrores = 0;
 
     for (let i = 0; i < salariosAnuales.length; i++) {
+        if (salariosAnuales[i].value === ``) {
+            salariosAnuales[i].className = `error`;
+            acumuladorDeErroresSalariosVacios++;
+            contadorDeErrores++;
+            continue;
+        };
         if (salariosAnuales[i].value < 0) {
             salariosAnuales[i].className = `error`;
             acumuladorDeErroresNumerosNegativos++;
@@ -32,26 +47,36 @@ function manejarErrores() {
             salariosAnuales[i].className = ``;
         };
 
-        if(!/^[0-9\.]/.test((Number(salariosAnuales[i].value)))){
+        if (!/^[0-9\.]/.test((Number(salariosAnuales[i].value)))) {
             salariosAnuales[i].className = `error`
             acumuladorDeErroresSalarioMalFormulado++;
             contadorDeErrores++;
             continue;
-        }else{
+        } else {
             salariosAnuales[i].className = ``;
         };
 
     };
+    
+    if(contadorDeErrores === 0){
+        mostrarResultado();
+    }else{
+        ocultarResultado();
+    };
 
+    
 
 };
 
 function mostrarErroresSalariosAnuales() {
     const erroresEnNumerosNegativos = validarSalariosAnualesEnNegativos(acumuladorDeErroresNumerosNegativos);
     const erroresEnMalFormulacion = validarSalarioMalFormulados(acumuladorDeErroresSalarioMalFormulado);
+    const erroresEnSalariosVacios = validarSalariosVacios(acumuladorDeErroresSalariosVacios);
+
     const errores = {
         camposConErroresNegativos: erroresEnNumerosNegativos,
-        camposConErroresDeMalFormulacion: erroresEnMalFormulacion
+        camposConErroresDeMalFormulacion: erroresEnMalFormulacion,
+        camposConErroresDeSalariosVacios: erroresEnSalariosVacios
     };
 
     const keys = Object.keys(errores);
