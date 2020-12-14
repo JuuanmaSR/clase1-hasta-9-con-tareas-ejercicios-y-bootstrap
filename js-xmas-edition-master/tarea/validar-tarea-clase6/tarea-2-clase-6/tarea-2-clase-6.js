@@ -21,13 +21,14 @@ document.querySelector(`#quitar`).onclick = function (event) {
 
 document.querySelector(`#calcular`).onclick = function (event) {
     let salariosAnuales = obtenerSalarios();
-    manejarErrores();
-    mostrarErroresSalariosAnuales();
+    
+    validarFormularioDeSalariosAnuales();
+
     mostrarSalarios(`mayor`, calcularMayorSalarioAnual(salariosAnuales));
     mostrarSalarios(`menor`, calcularMenorSalarioAnual(salariosAnuales));
     mostrarSalarios(`promedio`, calcularPromedioSalarioAnual(salariosAnuales));
     mostrarSalarios(`promediomensual`, calcularPromedioSalarioMensual(salariosAnuales));
-    mostrarResultado();
+    //mostrarResultado();
 
 
     event.preventDefault();
