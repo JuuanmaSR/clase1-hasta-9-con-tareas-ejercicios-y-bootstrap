@@ -96,4 +96,20 @@ function mostrarErroresSalariosAnuales() {
 
 };
 
+function borrarErroresAcumulados() {
+    acumuladorDeErroresSalariosVacios = 0;
+    acumuladorDeErroresSalarioMalFormulado = 0;
+    acumuladorDeErroresNumerosNegativos = 0;
 
+    const $erroresAcumulados = document.querySelectorAll(`.errores-mostrados`);
+    $erroresAcumulados.forEach(function (error) {
+        error.remove();
+    });
+};
+
+function validarFormularioDeSalariosAnuales() {
+    borrarErroresAcumulados();
+    manejarErrores();
+    mostrarErroresSalariosAnuales();
+   
+};
