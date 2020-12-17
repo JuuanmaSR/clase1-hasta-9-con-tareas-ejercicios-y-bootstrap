@@ -1,0 +1,23 @@
+{
+  "name": "clase1-hasta-clase9-tareas-y-ejercicios",
+  "version": "1.0.0",
+  "description": "Utilizando boostrap a modo de tarea clase-10 y npm.",
+  "main": "tarea-2-clase-6.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuuanmaSR/tarea-6-1-y-2-utilizando-boostrap.git"
+  },
+  "author": "Juan Maria Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuuanmaSR/tarea-6-1-y-2-utilizando-boostrap/issues"
+  },
+  "homepage": "https://github.com/JuuanmaSR/tarea-6-1-y-2-utilizando-boostrap#readme",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.5.3"
+  }
+}
