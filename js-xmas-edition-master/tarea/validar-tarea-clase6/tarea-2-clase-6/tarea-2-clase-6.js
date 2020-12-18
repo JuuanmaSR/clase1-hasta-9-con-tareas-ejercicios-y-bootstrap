@@ -108,7 +108,7 @@ function mostrarSalarios(tipo, valor) {
 
 function mostrarBotonCalcular() {
     let $botonCalcular = document.querySelector(`#calcular`);
-    $botonCalcular.className = ``;
+    $botonCalcular.className = `btn btn-outline-primary`;
 };
 
 
@@ -120,7 +120,7 @@ function mostrarResultado() {
 
 function mostrarBotonResetear() {
     let $botonResetear = document.querySelector(`#resetear`);
-    $botonResetear.className = ``;
+    $botonResetear.className = `btn btn-outline-primary`;
 }
 
 
