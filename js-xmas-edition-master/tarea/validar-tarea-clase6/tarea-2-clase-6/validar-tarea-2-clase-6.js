@@ -88,7 +88,7 @@ function mostrarErroresSalariosAnuales() {
         const error = errores[key];
         if (error) {
             const $error = document.createElement(`li`);
-            $error.className = `errores-mostrados`;
+            $error.className = ` p-3 mb-2 bg-danger text-white `;
             $error.innerText = error;
 
             mostrarErrores.appendChild($error);
@@ -103,7 +103,7 @@ function borrarErroresAcumulados() {
     acumuladorDeErroresSalarioMalFormulado = 0;
     acumuladorDeErroresNumerosNegativos = 0;
 
-    const $erroresAcumulados = document.querySelectorAll(`.errores-mostrados`);
+    const $erroresAcumulados = document.querySelectorAll(`li`);
     $erroresAcumulados.forEach(function (error) {
         error.remove();
     });
