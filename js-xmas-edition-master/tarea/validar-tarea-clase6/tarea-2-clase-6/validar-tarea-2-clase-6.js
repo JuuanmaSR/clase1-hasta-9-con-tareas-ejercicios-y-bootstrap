@@ -57,14 +57,16 @@ function manejarErrores() {
         };
 
     };
-    
-    if(contadorDeErrores === 0){
+
+
+    if (contadorDeErrores === 0) {
         mostrarResultado();
-    }else{
+    } else {
         ocultarResultado();
     };
 
-    
+
+
 
 };
 
@@ -111,5 +113,5 @@ function validarFormularioDeSalariosAnuales() {
     borrarErroresAcumulados();
     manejarErrores();
     mostrarErroresSalariosAnuales();
-   
+
 };
