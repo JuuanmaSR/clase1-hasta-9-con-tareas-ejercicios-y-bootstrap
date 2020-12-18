@@ -13,15 +13,6 @@ function incrementarIndice() {
 };
 
 document.querySelector(`#quitar`).onclick = function (event) {
-    let cantidadDeIntegrantes = document.querySelectorAll(`.integrantes input`);
-    if (cantidadDeIntegrantes.length === 1){
-        ocultarBotonCalcular();
-        ocultarBotonResetear();
-        ocultarResultado();
-        document.querySelector(`mostrar-errores`).className = `oculto`;
-        
-    };
-    
     quitarIntegrante();
 
 
